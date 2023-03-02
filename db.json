@@ -44,6 +44,24 @@
       "publisher": "merhaba",
       "categoryId": "1",
       "isRead": false
+    },
+    {
+      "id": "1677661975468",
+      "title": "ruhların parmakları",
+      "author": "mehmet sağ",
+      "isbn": "12121212121",
+      "publisher": "ışık",
+      "categoryId": "1",
+      "isRead": false
+    },
+    {
+      "id": "1677665632939",
+      "title": "satranç",
+      "author": "tom hulks",
+      "isbn": "35353535353",
+      "publisher": "iş bankası ",
+      "categoryId": "3",
+      "isRead": true
     }
   ],
   "categories": [
