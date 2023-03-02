@@ -19,7 +19,7 @@ useEffect(()=>{
     .catch(res=>{})
 // eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
-// if(book===null)return null  ? işareti
+// if(book===null)return null  yerine  ? işareti
 
   return (
     <>
@@ -61,8 +61,8 @@ useEffect(()=>{
     </tr>
     <tr>
       <th scope="row">6</th>
-      <td >Kategori</td>
-      <td>{category?.name}</td>
+      <td className='col-5'>Kategori</td>
+      <td className='col-6'>{category?.name}</td>
     </tr>
   </tbody>
 </table>
