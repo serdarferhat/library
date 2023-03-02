@@ -36,9 +36,9 @@ const AddBookForm = () => {
       .post(urls.books, form)
       .then((res) => {
         dispatch({ type: actionTypes.bookTypes.ADD_BOOK, payload: form });
-        setShowModal(true)
+        setShowModal(true);
       })
-      .catch((err) => {});
+      .catch((err) => { });
   };
   return (
     <div className="container my-5">
@@ -111,7 +111,8 @@ const AddBookForm = () => {
             setForm({ ...form, categoryId: event.target.value })
           }
           className="form-select"
-          aria-label="Default select example">
+          aria-label="Default select example"
+        >
           {categoriesState.categories.map((item) => (
             <option key={item.id} value={item.id}>
               {item.name}
@@ -141,7 +142,7 @@ const AddBookForm = () => {
           title={"Başarılı"}
           content="Kitap başarıyla kaydedildi"
           buttonText={"Kapat"}
-          buttonOnClick={()=>navigate("/")}
+          buttonOnClick={() => navigate("/")}
         />
       )}
     </div>

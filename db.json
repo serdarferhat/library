@@ -19,33 +19,6 @@
       "categoryId": "3"
     },
     {
-      "id": "1675196617428",
-      "title": "deneme",
-      "author": "deneme",
-      "isbn": "11111111111",
-      "publisher": "deneme",
-      "categoryId": "2",
-      "isRead": true
-    },
-    {
-      "id": "1675198136490",
-      "title": "deneme1",
-      "author": "deneme1",
-      "isbn": "22222222222",
-      "publisher": "deneme1",
-      "categoryId": "2",
-      "isRead": true
-    },
-    {
-      "id": "1676188616155",
-      "title": "merhaba",
-      "author": "merhaba",
-      "isbn": "11111111111",
-      "publisher": "merhaba",
-      "categoryId": "1",
-      "isRead": false
-    },
-    {
       "id": "1677661975468",
       "title": "ruhların parmakları",
       "author": "mehmet sağ",

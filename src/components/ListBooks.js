@@ -3,20 +3,30 @@ import React, { useState } from "react";
 
 import { Link } from "react-router-dom"
 
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 
 import check from "../assets/images/check.png"
 
 import GeneralModal from "./GeneralModal";
 
+import api from "../api/api";
+import urls from "../api/urls";
+import actionTypes from "../redux/actions/actionTypes";
+
 const ListBooks = () => {
+  const dispatch=useDispatch()
   const { booksState, categoriesState } = useSelector((state) => state);
   console.log(booksState);
   console.log(categoriesState);
   const [showModal, setShowModal] = useState(false);
   const [dltBook,setDltBook]=useState("")
   const deleteBook=(id)=>{
-    console.log(id)
+    api.delete(`${urls.books}/${id}`)
+    .then(res=>{
+       dispatch({type:actionTypes.bookTypes.DELETE_BOOK,
+      payload:id})
+      setShowModal(false)
+    })
   }
   return (
     <div className="container my-5">
