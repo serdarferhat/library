@@ -1,25 +1,43 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 import Header from '../components/Header'
 
-import { useParams } from 'react-router-dom'
+import { useParams,useNavigate } from 'react-router-dom'
 
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-
+import api from '../api/api'
+import urls from '../api/urls'
+import actionTypes from '../redux/actions/actionTypes'
 
 const EditBook = () => {
+                const dispatch=useDispatch()
                 const params=useParams();
+                const navigate=useNavigate()
                 const {booksState,categoriesState}=useSelector(state=>state)
                 // console.log(params)
                 const myBook=booksState.books.find(item=>item.id===params.bookId)
                 // console.log(myBook)
+                const [form, setForm] = useState(myBook);
+                const handleSubmit=(event)=>{
+                event.preventDefault()
+                /* validation */
+                if (!form.title || !form.author || !form.isbn || !form.publisher) {
+                alert("Bütün alanlar zorunludur");
+                return;
+                }
+                api.put(`${urls.books}/${params.bookId}`,form)
+                .then(res=>{
+                dispatch({type:actionTypes.bookTypes.EDIT_BOOK,payload:form})
+                navigate("/")
+                })
+}
 
                 return (
-                                <div>
-                                                <Header />
-                                                <div className="container my-5">
-      <form>
+      <div>
+      <Header />
+      <div className="container my-5">
+      <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">
             Kitap Adı<span style={{ color: "orangered" }}>*</span>
@@ -29,10 +47,10 @@ const EditBook = () => {
             className="form-control"
             id="title"
             placeholder="Sineklerin Tanrısı"
-//             value={form.title}
-//             onChange={(event) =>
-//               setForm({ ...form, title: event.target.value })
-//             }
+            value={form.title}
+            onChange={(event) =>
+              setForm({ ...form, title: event.target.value })
+            }
           />
         </div>
         <div className="mb-3">
@@ -44,10 +62,10 @@ const EditBook = () => {
             className="form-control"
             id="author"
             placeholder="William Golding"
-//             value={form.author}
-//             onChange={(event) =>
-//               setForm({ ...form, author: event.target.value })
-//             }
+            value={form.author}
+            onChange={(event) =>
+              setForm({ ...form, author: event.target.value })
+            }
           />
         </div>
         <div className="mb-3">
@@ -59,10 +77,10 @@ const EditBook = () => {
             className="form-control"
             id="publisher"
             placeholder="İş Bankası Yayınları"
-//             value={form.publisher}
-//             onChange={(event) =>
-//               setForm({ ...form, publisher: event.target.value })
-//             }
+            value={form.publisher}
+            onChange={(event) =>
+              setForm({ ...form, publisher: event.target.value })
+            }
           />
         </div>
         <div className="mb-3">
@@ -74,19 +92,19 @@ const EditBook = () => {
             className="form-control"
             id="isbn"
             placeholder="xxxxxxxxxxx"
-//             value={form.isbn}
-//             onChange={(event) => {
-//               if (event.target.value.length <= 11) {
-//                 setForm({ ...form, isbn: event.target.value });
-//               }
-//             }}
+            value={form.isbn}
+            onChange={(event) => {
+              if (event.target.value.length <= 11) {
+                setForm({ ...form, isbn: event.target.value });
+              }
+            }}
           />
         </div>
         <select
-//           value={form.categoryId}
-//           onChange={(event) =>
-//             setForm({ ...form, categoryId: event.target.value })
-//           }
+          value={form.categoryId}
+          onChange={(event) =>
+            setForm({ ...form, categoryId: event.target.value })
+          }
           className="form-select"
           aria-label="Default select example"
         >
@@ -100,8 +118,8 @@ const EditBook = () => {
           <input
             className="form-check-input"
             type="checkbox"
-//             value={form.isRead}
-//             onChange={() => setForm({ ...form, isRead: !form.isRead })}
+            value={form.isRead}
+            onChange={() => setForm({ ...form, isRead: !form.isRead })}
             id="isRead"
           />
           <label className="form-check-label" htmlFor="isRead">

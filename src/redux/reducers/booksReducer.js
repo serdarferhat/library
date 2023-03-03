@@ -41,6 +41,17 @@ const booksReducer=(state=initialState,action)=>{
             return{
                 ...state,books:filteredBooks
             }
+            case actionTypes.bookTypes.EDIT_BOOK:
+             var tempBook=[]
+             for(let i=0;i<state.books.length;i++){
+                if(state.books[i].id===action.payload.id){
+                    tempBook.push(action.payload)
+                }else{
+                    tempBook.push(state.books[i])
+                }
+                
+             }
+
         default:
             return state
     }
