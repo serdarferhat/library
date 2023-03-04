@@ -3,6 +3,7 @@ import React from 'react'
 import Header from '../components/Header'
 
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 
 const ListCategories = () => {
@@ -10,6 +11,9 @@ const ListCategories = () => {
   return (
     <div>
       <Header />
+      <div className='container d-flex justify-content-end mt-2'><Link to={"/add-category"} className='btn btn-primary'>
+        Kategori Ekle
+        </Link></div>
       <div className='container'>
         {
           categoriesState.categories.length === 0 && (
@@ -21,7 +25,7 @@ const ListCategories = () => {
         {
           categoriesState.categories.length > 0 && (
             
-            <table className="table">
+            <table className="mt-2 table table-bordered border-secondary">
   <thead>
     <tr>
       <th scope="col">Sıra</th>
@@ -36,7 +40,10 @@ const ListCategories = () => {
      <th scope="row">{index+1}</th>
      <td>{category.name}</td>
      <td>{booksState.books.filter(item=>item.categoryId===category.id).length}</td>
-     <td>@mdo</td>
+     <td>
+      <button className='btn btn-sm btn-danger'>Sil</button>
+      <button className='btn btn-sm btn-secondary mx-2'>Güncelle</button>
+      </td>
    </tr>
   ))}
   </tbody>
