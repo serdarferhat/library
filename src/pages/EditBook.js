@@ -28,7 +28,8 @@ const EditBook = () => {
                 }
                 api.put(`${urls.books}/${params.bookId}`,form)
                 .then(res=>{
-                dispatch({type:actionTypes.bookTypes.EDIT_BOOK,payload:form})
+                dispatch({type:actionTypes.bookTypes.EDIT_BOOK,
+                  payload:form})
                 navigate("/")
                 })
 }

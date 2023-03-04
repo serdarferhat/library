@@ -11,6 +11,7 @@ import actionTypes from "./redux/actions/actionTypes";
 import Error from "./pages/Error";
 import BookDetail from "./pages/BookDetail";
 import EditBook from "./pages/EditBook";
+import ListCategories from "./pages/ListCategories";
 
 function App() {
   const dispatch = useDispatch();
@@ -62,6 +63,7 @@ function App() {
         <Route path="/add-book" element={<AddBook />} />
         <Route path="/book-detail/:bookId" element={<BookDetail/>}/>
         <Route path="/edit-book/:bookId" element={<EditBook/>}/>
+        <Route path="/list-categories" element={<ListCategories/>}/>
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>

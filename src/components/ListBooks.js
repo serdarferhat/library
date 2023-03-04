@@ -17,8 +17,8 @@ import actionTypes from "../redux/actions/actionTypes";
 const ListBooks = () => {
   const dispatch = useDispatch()
   const { booksState, categoriesState } = useSelector((state) => state);
-  console.log(booksState);
-  console.log(categoriesState);
+  // console.log(booksState);
+  // console.log(categoriesState);
   const [showModal, setShowModal] = useState(false);
   const [dltBook, setDltBook] = useState("")
   const deleteBook = (id) => {

@@ -4,7 +4,7 @@
       "id": "1",
       "title": "Sineklerin Tanrısı",
       "author": "William Golding",
-      "isbn": "",
+      "isbn": "13213213",
       "publisher": "İş Bankası Yayınları",
       "categoryId": "1",
       "isRead": false
@@ -12,7 +12,7 @@
     {
       "id": "2",
       "title": "Denemeler",
-      "author": "Montaigne",
+      "author": "Montaig",
       "isbn": "111111111111",
       "publisher": "Can Yayınları",
       "isRead": true,
@@ -25,7 +25,7 @@
       "isbn": "12121212121",
       "publisher": "ışıklı",
       "categoryId": "1",
-      "isRead": false
+      "isRead": true
     }
   ],
   "categories": [

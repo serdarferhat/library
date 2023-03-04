@@ -1,3 +1,4 @@
+/* eslint-disable no-fallthrough */
 import actionTypes from "../actions/actionTypes";
 
 const initialState={
@@ -50,6 +51,10 @@ const booksReducer=(state=initialState,action)=>{
                     tempBook.push(state.books[i])
                 }
                 
+             }
+             return{
+                ...state,
+                books:tempBook
              }
 
         default:
