@@ -26,6 +26,15 @@
       "publisher": "ışıklı",
       "categoryId": "1",
       "isRead": true
+    },
+    {
+      "id": "1677919820566",
+      "title": "Köy Bakkaliyesi",
+      "author": "Mehmet Kamış",
+      "isbn": "45454545454",
+      "publisher": "iş bankası",
+      "categoryId": "2",
+      "isRead": true
     }
   ],
   "categories": [
