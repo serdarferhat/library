@@ -65,7 +65,7 @@ const AddCategory = () => {
           </button>
         </div>
         </div>
-                                </form>
+       </form>
                 </div>
                 </div>
   )

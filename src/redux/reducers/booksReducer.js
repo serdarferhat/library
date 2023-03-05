@@ -56,6 +56,12 @@ const booksReducer=(state=initialState,action)=>{
                 ...state,
                 books:tempBook
              }
+             case actionTypes.bookTypes.DELETE_BOOKS_CATEGORY:
+                let filitreliBooks=state.books.filter(item=>item.categoryId!==action.payload)
+                return{
+                    ...state,
+                    books:filitreliBooks
+                }
 
         default:
             return state
