@@ -14,6 +14,8 @@ import urls from "../api/urls";
 
 import actionTypes from "../redux/actions/actionTypes";
 
+import { firstBig } from "../utils/firstBig";
+
 const ListBooks = () => {
   const dispatch = useDispatch()
   const { booksState, categoriesState } = useSelector((state) => state);
@@ -54,8 +56,8 @@ const ListBooks = () => {
             return (
               <tr key={book.id}>
                 <th>{index + 1}{book.isRead === true && <img style={{ width: "20px" }} src={check} />}</th>
-                <td>{book.title}</td>
-                <td>{book.author}</td>
+                <td>{firstBig(book.title)}</td>
+                <td>{firstBig(book.author)}</td>
                 <td>{myCategory.name}</td>
                 <td className="d-flex">
                   <Link to={`/book-detail/${book.id}`}>Detay</Link>

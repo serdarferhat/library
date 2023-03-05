@@ -35,6 +35,24 @@
       "publisher": "iş bankası",
       "categoryId": "2",
       "isRead": true
+    },
+    {
+      "id": "1678022370087",
+      "title": "Alaca Karanlık",
+      "author": "goerg Hans",
+      "isbn": "98989898989",
+      "publisher": "Tatlı kitap evi",
+      "categoryId": "1677932912298",
+      "isRead": false
+    },
+    {
+      "id": "1678022427080",
+      "title": "Tatil ve Ben",
+      "author": "Hediye Ahçe",
+      "isbn": "65656565656",
+      "publisher": "Yağmur Kitabevi",
+      "categoryId": "3",
+      "isRead": false
     }
   ],
   "categories": [
@@ -53,6 +71,10 @@
     {
       "id": "1677932912298",
       "name": "Bilim Kurgu"
+    },
+    {
+      "id": "1678025132398",
+      "name": "çocuk kitabı"
     }
   ]
 }

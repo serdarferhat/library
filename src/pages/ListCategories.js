@@ -12,6 +12,7 @@ import urls from "../api/urls"
 
 import actionTypes from "../redux/actions/actionTypes"
 
+import { firstBig } from '../utils/firstBig'
 
 const ListCategories = () => {
   const dispatch=useDispatch()
@@ -56,7 +57,7 @@ const ListCategories = () => {
   {categoriesState.categories.map((category,index)=>(
      <tr key={index}>
      <th scope="row">{index+1}</th>
-     <td>{category.name}</td>
+     <td>{firstBig(category.name)}</td>
      <td>{booksState.books.filter(item=>item.categoryId===category.id).length}</td>
      <td>
       <button onClick={()=>{
