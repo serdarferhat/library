@@ -13,6 +13,7 @@ import BookDetail from "./pages/BookDetail";
 import EditBook from "./pages/EditBook";
 import ListCategories from "./pages/ListCategories";
 import AddCategory from "./pages/AddCategory";
+import EditCategory from "./pages/EditCategory";
 
 function App() {
   const dispatch = useDispatch();
@@ -66,6 +67,8 @@ function App() {
         <Route path="/edit-book/:bookId" element={<EditBook/>}/>
         <Route path="/list-categories" element={<ListCategories/>}/>
         <Route path="/add-category" element={<AddCategory/>}/>
+        <Route path="/edit-category/:categoryId" element={<EditCategory/>}/>
+
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>

@@ -16,7 +16,7 @@ export const firstBig=(sample="")=>{
 tempWords.push(tempWord)
 }
                 
-console.log(tempWords)
+// console.log(tempWords)
 const cemi=tempWords.join(" ")
                 return cemi
 }
