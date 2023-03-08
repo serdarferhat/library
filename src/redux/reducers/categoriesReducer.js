@@ -1,48 +1,56 @@
 import actionTypes from "../actions/actionTypes";
 
-const initialState={
-    start:false,
-    success:false,
+const initialState = {
+    start: false,
+    success: false,
     categories: [],
-    fail:false,
-    error:""
+    fail: false,
+    error: ""
 }
 
-const categoriesReducer=(state=initialState,action)=>{
+const categoriesReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.categoryTypes.FETCH_CATEGORIES_START:
-            return{
+            return {
                 ...state,
-                start:true
+                start: true
             }
         case actionTypes.categoryTypes.FETCH_CATEGORIES_SUCCESS:
-            return{
+            return {
                 ...state,
-                start:false,
-                fail:false,
+                start: false,
+                fail: false,
                 success: true,
-                categories:action.payload
-            }            
+                categories: action.payload
+            }
         case actionTypes.categoryTypes.FETCH_CATEGORIES_FAIL:
-            return{
+            return {
                 ...state,
-                start:false,
-                success:false,
-                fail:true,
+                start: false,
+                success: false,
+                fail: true,
                 error: action.payload
             }
-            case actionTypes.categoryTypes.ADD_CATEGORY:
+        case actionTypes.categoryTypes.ADD_CATEGORY:
+            return {
+                ...state,
+                categories: [...state.categories, action.payload]
+            }
+            case actionTypes.categoryTypes.EDIT_CATEGORY:
+                let newArray=[]
+                for(let i=0;i<state.categories.length;i++){
+                    if(state.categories[i].id === action.payload.id){
+                        newArray.push(action.payload)
+                    }else{
+                       newArray.push(state.categories[i]) 
+                    }
+                }
                 return{
                     ...state,
-                    categories:[...state.categories,action.payload]
+                    categories: newArray
                 }
-            case actionTypes.categoryTypes.DELETE_CATEGORY:
-                let filteredCategories=state.categories.filter(item=>item.id!==action.payload)
-                return   {
-                    ...state,categories:filteredCategories
-                }
-        default:
-            return state
+            default:
+                return state
     }
 }
 

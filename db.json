@@ -30,20 +30,11 @@
     {
       "id": "1677919820566",
       "title": "Köy Bakkaliyesi",
-      "author": "Mehmet Kamış",
+      "author": "Mehmet Kamışlı",
       "isbn": "45454545454",
       "publisher": "iş bankası",
       "categoryId": "2",
       "isRead": true
-    },
-    {
-      "id": "1678022370087",
-      "title": "Alaca Karanlık",
-      "author": "goerg Hans",
-      "isbn": "98989898989",
-      "publisher": "Tatlı kitap evi",
-      "categoryId": "1677932912298",
-      "isRead": false
     },
     {
       "id": "1678022427080",
@@ -53,12 +44,21 @@
       "publisher": "Yağmur Kitabevi",
       "categoryId": "3",
       "isRead": false
+    },
+    {
+      "id": "1678285171248",
+      "title": "Asımın Nesli",
+      "author": "Mehmet Akif Ersoy",
+      "isbn": "12121245454",
+      "publisher": "Tutku",
+      "categoryId": "3",
+      "isRead": false
     }
   ],
   "categories": [
     {
       "id": "1",
-      "name": "Roman"
+      "name": " m.Roman"
     },
     {
       "id": "2",
@@ -75,6 +75,14 @@
     {
       "id": "1678025132398",
       "name": "çocuk kitabı"
+    },
+    {
+      "id": "1678285265134",
+      "name": "çocuk romanları"
+    },
+    {
+      "id": "1678285331108",
+      "name": "bebek gelişim"
     }
   ]
 }

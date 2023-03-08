@@ -3,11 +3,18 @@ import React, { useState } from 'react'
 import Header from '../components/Header'
 
 import { useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
 import { firstBig } from '../utils/firstBig'
+import { useNavigate } from 'react-router-dom'
+
+import api from "../api/api"
+import urls from "../api/urls"
+import actionTypes from '../redux/actions/actionTypes'
 
 
 const EditCategory = () => {
+  const navigate=useNavigate()
+  const dispatch=useDispatch()
   const { categoryId } = useParams()
   // console.log(categoryId)
   const { categoriesState } = useSelector(state => state)
@@ -20,7 +27,17 @@ const EditCategory = () => {
       alert("Kategori adı boş olamaz")
       return
     }
-    
+    const hasCategory=categoriesState.categories.find(item=>firstBig(item.name)===firstBig(form.name));
+    if(hasCategory){
+      alert(`${form.name} adıyla kayıtlı kategori vardır.`);
+      return
+    }
+    api.put(`${urls.categories}/${categoryId}`,form)
+    .then(res=>{
+      dispatch({type:actionTypes.categoryTypes.EDIT_CATEGORY,payload:form})
+      navigate("/list-categories")
+    })
+    .catch(err=>{})
   }
   return (
     <div>
