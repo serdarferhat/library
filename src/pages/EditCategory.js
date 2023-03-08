@@ -22,7 +22,6 @@ const EditCategory = () => {
   const myCategory = categoriesState.categories.find((item) => item.id === categoryId)
   // console.log(myCategory)
   const [form, setForm] = useState(myCategory)
-  const [showModal, setShowModal] = useState(false)
   const [modalFeature, setModalFeature] = useState({
     show: false,
     message: "",
