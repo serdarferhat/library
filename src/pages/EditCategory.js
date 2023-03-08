@@ -34,7 +34,7 @@ const EditCategory = () => {
     }
     api.put(`${urls.categories}/${categoryId}`,form)
     .then(res=>{
-      dispatch({type:actionTypes.categoryTypes.EDIT_CATEGORY,payload:form})
+      dispatch({type:actionTypes.categoryTypes.EDIT_CATEGORY,payload:{...form,name:firstBig(form.name).trim()}})
       navigate("/list-categories")
     })
     .catch(err=>{})
