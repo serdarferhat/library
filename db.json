@@ -53,6 +53,15 @@
       "publisher": "Tutku",
       "categoryId": "3",
       "isRead": false
+    },
+    {
+      "id": "1678307559854",
+      "title": "merhaba",
+      "author": "dünya",
+      "isbn": "35353535353",
+      "publisher": "dostluk",
+      "categoryId": "1677932912298",
+      "isRead": false
     }
   ],
   "categories": [
@@ -62,7 +71,7 @@
     },
     {
       "id": "2",
-      "name": "Hikaye"
+      "name": "fantastik bilim kurgu"
     },
     {
       "id": "3",
