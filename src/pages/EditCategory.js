@@ -4,6 +4,7 @@ import Header from '../components/Header'
 
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { firstBig } from '../utils/firstBig'
 
 
 const EditCategory = () => {
@@ -19,7 +20,7 @@ const EditCategory = () => {
       alert("Kategori adı boş olamaz")
       return
     }
-
+    
   }
   return (
     <div>
@@ -40,7 +41,7 @@ const EditCategory = () => {
           
           />
            <div className="d-flex justify-content-center my-5">
-          <button className="btn btn-secondary w-50" type="submit">
+          <button disabled={firstBig(myCategory.name)===firstBig(form.name).trim()} className="btn btn-secondary w-50" type="submit">
             Güncelle
           </button>
         </div>
